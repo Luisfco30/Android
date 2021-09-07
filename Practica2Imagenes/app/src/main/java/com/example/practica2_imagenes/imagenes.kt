@@ -11,18 +11,15 @@ class imagenes (
 ):Parcelable {
     companion object {
         val imgs = arrayOf(
-           imagenes(R.drawable.car,"a"),
-           imagenes(R.drawable.ic_pickup_car,"b"),
-           imagenes(R.drawable.ic_caravan,"c"),
-           imagenes(R.drawable.sportivecar,"d"),
-           imagenes(R.drawable.ic_taxi,"e"),
-           imagenes(R.drawable.stationwagon,"f"),
-           imagenes(R.drawable.tow,"g")
+           imagenes(R.drawable.car,"Carro azul"),
+           imagenes(R.drawable.ic_pickup_car,"Camioneta "),
+           imagenes(R.drawable.ic_caravan,"Combie"),
+           imagenes(R.drawable.sportivecar,"Carro deportivo"),
+           imagenes(R.drawable.ic_taxi,"Taxi"),
+           imagenes(R.drawable.stationwagon,"Camping"),
+           imagenes(R.drawable.tow,"Transporte de carros")
 
         )
     }
-    /*fun statusChange(status: ImageStatus) {
-        images[this.id!!].status = status
-    }*/
 }
 

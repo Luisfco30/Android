@@ -1,5 +1,6 @@
 package com.example.practica2_imagenes
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
@@ -20,6 +21,10 @@ class MainActivity2 : AppCompatActivity() {
         imgDetalle.setImageResource(picture.imagen)
         txtDetalle.text=(picture.datos)
 
-
+        imgDetalle.setOnClickListener {
+            startActivity(Intent(this, MainActivity3::class.java).apply {
+                putExtra("selectedImg", picture)
+            })
+        }
     }
 }
