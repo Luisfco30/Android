@@ -7,17 +7,18 @@ import android.os.Parcelable
 @Parcelize
 class imagenes (
     var imagen: Int=0,
-    var datos: String = ""
+    var datos: String = "",
+    var estatus:Boolean=false
 ):Parcelable {
     companion object {
         val imgs = arrayOf(
-           imagenes(R.drawable.car,"Carro azul"),
-           imagenes(R.drawable.ic_pickup_car,"Camioneta "),
+           imagenes(R.drawable.car,"Carro azul",false),
+           imagenes(R.drawable.ic_pickup_car,"Camioneta ",false),
            imagenes(R.drawable.ic_caravan,"Combie"),
-           imagenes(R.drawable.sportivecar,"Carro deportivo"),
-           imagenes(R.drawable.ic_taxi,"Taxi"),
-           imagenes(R.drawable.stationwagon,"Camping"),
-           imagenes(R.drawable.tow,"Transporte de carros")
+           imagenes(R.drawable.sportivecar,"Carro deportivo",false),
+           imagenes(R.drawable.ic_taxi,"Taxi",false),
+           imagenes(R.drawable.stationwagon,"Camping",false),
+           imagenes(R.drawable.tow,"Transporte de carros",false)
 
         )
     }
