@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">Practica2-Imagenes</string>
-    <string name="INFORMACIÓN">informacion</string>
-    <string name="siguiente" />
-    <string name="imagen">imagen</string>
-    <string name="anterior">anterior</string>
-    <string name="datos">datos</string>
-</resources>
