@@ -1,11 +1,8 @@
 package com.example.practica2_imagenes
 
-import android.graphics.Picture
+import android.media.MediaPlayer
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 
@@ -16,7 +13,8 @@ class Principal : Fragment(R.layout.fragment_principal) {
     private lateinit var imgAnterior: ImageView
     private lateinit var imgSiguiente: ImageView
     private lateinit var imgPrincipal: ImageView
-    private lateinit var im: imagenes
+    private lateinit var corazon: ImageView
+    private lateinit var mp:MediaPlayer;
 
     override fun onResume() {
         super.onResume()
@@ -25,10 +23,11 @@ class Principal : Fragment(R.layout.fragment_principal) {
         imgAnterior = requireView().findViewById(R.id.btnAnterior)
         imgSiguiente = requireView().findViewById(R.id.btnSiguiente)
         btnInfo = requireView().findViewById(R.id.btnInfo)
+        corazon = requireView().findViewById(R.id.imgCorazonP)
         validaciones()
         botones()
     }
-    fun validaciones() {
+    private fun validaciones() {
         when (cont) {
             -1 -> cont = 6
             7 -> cont = 0
@@ -36,7 +35,7 @@ class Principal : Fragment(R.layout.fragment_principal) {
 
         imagenes.imgs[cont].imagen.let { imgPrincipal.setImageResource(it) }
     }
-    fun botones(){
+    private fun botones(){
         imgAnterior.setOnClickListener {
             cont--
             validaciones()
@@ -49,11 +48,18 @@ class Principal : Fragment(R.layout.fragment_principal) {
         }
 
         btnInfo.setOnClickListener {
+            mp=MediaPlayer.create(context, imagenes.imgs[cont].sonido)
+            mp.start()
              (requireActivity() as MainActivity).cambiarFragment(Detalle().apply {
                  arguments = Bundle().apply {
                      putParcelable("selectedImg",imagenes.imgs[cont])
                  }
              })
+          }
+
+        corazon.setOnClickListener {
+            MediaPlayer.create(context, imagenes.imgs[cont].sonido).start()
+
           }
     }
 }
